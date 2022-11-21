@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Miamo1.HeaderView">
+    <ContentView.Content>
+        <Grid BackgroundColor="#"   HeightRequest="200">
+            <Image Aspect="AspectFill"
+                   Source="fotomuie.png"
+                   Opacity="0.5"/>
+            <Label Text="Miamo"
+                   TextColor="Black"
+                    VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="
+                   35"/>
+        </Grid>
+       
+        
+    </ContentView.Content>
+</ContentView>

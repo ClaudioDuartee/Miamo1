@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:Miamo1;assembly=Miamo1"
+             x:Class="Miamo1.MainShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FlyoutBaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#202020"/>
+                <Setter Property="Shell.ForegroundColor" Value="White"/>
+                <Setter Property="Shell.UnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TitleColor" Value="AliceBlue"/>
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource FlyoutBaseStyle}"/>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <pages:HeaderView/>
+    </Shell.FlyoutHeader>
+
+   
+
+ 
+    <!--Formatação-->
+
+    <FlyoutItem Title="Cadastro" Icon="select.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:ManagerPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cadastrados" Icon="select.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:ListPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Categoria" Icon="select.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:ManagerCategoria}"/>
+    </FlyoutItem>
+
+    <!--<TabBar>
+        <Tab Title="Cadastro" Icon="logoo.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:ManagerPage}"/>
+        </Tab>
+        <Tab Title="Cadastrados" Icon="logoo.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:ListPage}"/>
+        </Tab>
+    </TabBar>-->
+
+
+
+
+</Shell>

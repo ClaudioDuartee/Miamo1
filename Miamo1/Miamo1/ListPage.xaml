@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Miamo1.ListPage"
+             Title="Cadastrados">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="3">
+                <Frame  
+                        Padding="0"
+                        Margin="5"
+                        IsClippedToBounds="True"
+                        CornerRadius="100"
+                        HorizontalOptions="Center">
+
+                    <Image Source="logoo.png"/>
+                </Frame>
+
+                <Label Text="Miamo" HorizontalTextAlignment="Center"
+                    VerticalOptions="Center" TextColor="#242424" FontSize="30"/>
+            </StackLayout>
+
+            <StackLayout Padding="20" Orientation="Horizontal"  VerticalOptions="Center">
+                <Label Text="Titulo " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
+                       TextColor="#242424" FontSize="15"/>
+                <Label Text="Gênero " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
+                       TextColor="#242424" FontSize="15"/>
+                <Label Text="Produto " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
+                       TextColor="#242424" FontSize="15"/>
+                <Label Text="Preço " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
+                       TextColor="#242424" FontSize="15"/>
+                <Label Text="Categoria " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
+                       TextColor="#242424" FontSize="15"/>
+                
+            </StackLayout>
+            <StackLayout Padding="10">
+                <ListView x:Name="lvProduto" HeightRequest="400">
+
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
