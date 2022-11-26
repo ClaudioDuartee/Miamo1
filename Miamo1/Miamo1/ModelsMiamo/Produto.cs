@@ -8,7 +8,6 @@ namespace Miamo1.ModelsMiamo
 {
     public class Produto
     {
-        [PrimaryKey,AutoIncrement]
 
         public int IdProduto { get; set; }
         public string NomeProduto { get; set; }
