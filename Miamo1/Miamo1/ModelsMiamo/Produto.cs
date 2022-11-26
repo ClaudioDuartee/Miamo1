@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Miamo1.ModelsMiamo
 {
@@ -9,13 +10,17 @@ namespace Miamo1.ModelsMiamo
     {
         [PrimaryKey,AutoIncrement]
 
-        public int ID { get; set; }
-        public string Titulo { get; set; }
-        public string Genero { get; set; }
-        public string Produtos { get; set; }
-        public int Preço { get; set; }
+        public int IdProduto { get; set; }
+        public string NomeProduto { get; set; }
 
-        public int Categoria { get; set; }
+        public string DescricaoProduto { get; set; }
+        public string TamanhoProduto { get; set; }
+
+        public string PrecoProduto { get; set; }
+
+        public string CorProduto { get; set; }
+      
+        public int CategoriaProduto { get; set; }
 
 
     }

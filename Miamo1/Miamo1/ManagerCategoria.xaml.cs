@@ -1,7 +1,11 @@
-﻿using Miamo1.ModelsMiamo;
+﻿using Miamo1.CellsMiamo;
+using Miamo1.ModelsMiamo;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,30 +18,61 @@ namespace Miamo1
     public partial class ManagerCategoria : ContentPage
     {
 
-        public Contexto contexto;
+        //public Contexto contexto;
+
+        string urlApi = "https://miamoapi.azurewebsites.net/api";
         public ManagerCategoria()
         {
             InitializeComponent();
 
-            contexto = new Contexto();
-            CarregarLV();
+            //contexto = new Contexto();
+            CarregarDados();
         }
 
-        private void CarregarLV()
+        private void CarregarDados()
         {
-            lvCategoria.ItemTemplate = new DataTemplate(typeof(Categoria));
-            lvCategoria.ItemsSource = contexto.Conexao.Query<Categoria>("SELECT * FROM Categoria").ToList();
-            lvCategoria.RowHeight = 100;
 
+            try
+            {
+                HttpClient client = new HttpClient();
 
+                //execução metodo GET
+
+                var response = client.GetAsync(urlApi + "/Categoria").Result;
+
+                //le o resultado em json
+
+                var json = response.Content.ReadAsStringAsync().Result;
+
+                //transforma o json em lista de objetos (dto) / (Deserializa)
+
+                var categorias = JsonConvert.DeserializeObject<List<Categoria>>(json);
+
+                //Define o Template do Item
+
+                lvCategoria.ItemTemplate = new DataTemplate(typeof
+                    (ProdutosMiamo));
+
+                //associa a lista de generos vinda da api ao list view
+                lvCategoria.ItemsSource = categorias;
+            }
+            catch
+            {
+
+                DisplayAlert("Erro", "Erro ao carregar os dados", "OK");
+            }
+            //lvCategoria.ItemTemplate = new DataTemplate(typeof(Categoria));
+            //lvCategoria.ItemsSource = contexto.Conexao.Query<Categoria>("SELECT * FROM Categoria").ToList();
+            //lvCategoria.RowHeight = 100;
         }
+
 
         public void Limpar()
         {
             txtID.Text = "0";
             txtCategoria.Text = txtCategoria.Text = txtCategoria.Text = string.Empty;
             txtCategoria.Focus();
-            CarregarLV();
+            CarregarDados();
 
 
         }
@@ -57,23 +92,27 @@ namespace Miamo1
                 DisplayAlert("Erro", ex.Message, "OK");
 
             }
+
             Categoria categoria = new Categoria();
-            categoria.ID = Convert.ToInt32(txtID.Text);
+            //categoria.ID = Convert.ToInt32(txtID.Text);
             categoria.Categorias = txtCategoria.Text;
 
-            if (txtID.Text == "0")
+            var json = JsonConvert.SerializeObject(categoria);
+            var dados = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+
+            //metodo post API
+            var client = new HttpClient();
+            var response = client.PostAsync(urlApi + "/Categoria", dados);
+
+            if (response.Result.StatusCode == HttpStatusCode.OK)
             {
-                contexto.Cadastrar(categoria);
-                DisplayAlert("Sucesso", "Categoria Cadastrado Com Sucesso", "OK");
-                CarregarLV();
-                Limpar();
+                DisplayAlert("Sucesso", "Categoria Cadastrada com Sucesso", "OK");
+                txtCategoria.Text = "";
+                CarregarDados();
             }
             else
             {
-                contexto.Editar(categoria);
-                DisplayAlert("Sucesso", "Categoria Editado Com Sucesso", "OK");
-                CarregarLV();
-                Limpar();
+                DisplayAlert("Erro", "Informe a Categoria", "OK");
             }
         }
 
@@ -92,21 +131,21 @@ namespace Miamo1
 
         private void lvCategoria_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            try
-            {
-                var categoria = (Categoria)e.SelectedItem;
-                txtID.Text = categoria.ID.ToString();
-                txtCategoria.Text = categoria.Categorias;
+           // try
+           // {
+           //    var categoria = (Categoria)e.SelectedItem;
+           //     txtID.Text = categoria.ID.ToString();
+           //     txtCategoria.Text = categoria.Categorias;
 
 
 
 
-            }
-            catch (Exception ex)
-            {
+           // }
+           //catch (Exception ex)
+           // {
 
-                DisplayAlert("Erro", ex.Message, "OK");
-            }
+           //   DisplayAlert("Erro", ex.Message, "OK");
+           // }
         }
     }
 }

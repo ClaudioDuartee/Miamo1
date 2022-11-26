@@ -13,7 +13,7 @@
                         CornerRadius="100"
                         HorizontalOptions="Center">
                     
-                    <Image Source="logoo.png"/>
+                    <Image Source="logo.png"/>
                 </Frame>
 
                 <Label Text="Miamo" HorizontalTextAlignment="Center"
@@ -22,16 +22,18 @@
             <StackLayout Padding="10">
                 <Label x:Name="lblID" Text="ID"/>
                 <Entry x:Name="txtID" IsEnabled="False"  Text="0"/>
-                <Label x:Name="lblTitulo" Text="Titulo"/>
-                <Entry x:Name="txtTitulo" Placeholder="Digite o Titulo"  FontSize="15"/>
-                <Label x:Name="lblGenero" Text="Genero" />
-                <Entry x:Name="txtGenero" Placeholder="Digite o Gênero" FontSize="15"/>
-                <Label x:Name="lblProduto" Text="Produto" />
-                <Entry x:Name="txtProduto" Placeholder="Adicone o Produto"   FontSize="15"/>
-                <Label x:Name="lblPreço" Text="Preço" />
-                <Entry x:Name="txtPreço" Placeholder="Adicone o Preço"   FontSize="15"/>
-                <Label x:Name="lblCategoria" Text="Categoria" />
-                <Entry x:Name="txtCategoria" Placeholder="Adicone a Categoria"   FontSize="15"/>
+                <Label x:Name="lblNomeProduto " Text="Nome"/>
+                <Entry x:Name="txtNomeProduto " Placeholder="Digite o Nome do Produto"  FontSize="15"/>
+                <Label x:Name="lblDescricaoProduto" Text="Genero" />
+                <Entry x:Name="txtDescricaoProduto" Placeholder="Digite a Descricao do Produto" FontSize="15"/>
+                <Label x:Name="lblTamanhoProduto" Text="TamanhoProduto"/>
+                <Entry x:Name="txtTamanhoProduto" Placeholder=""   FontSize="15"/>
+                <Label x:Name="lblPrecoProduto " Text="Preço" />
+                <Entry x:Name="txtPrecoProduto " Placeholder=""   FontSize="15"/>
+                <Label x:Name="lblCorProduto " Text="CorProduto" />
+                <Entry x:Name="txtCorProduto" Placeholder=""   FontSize="15"/>
+                <Label x:Name="lblCategoriaProduto " Text="CategoriaProduto " />
+                <Entry x:Name="txtCategoriaProduto " Placeholder="Adicone a Categoria"   FontSize="15"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                 <Button x:Name="btnAtualizar" Text="Cadastrar" BackgroundColor="#05F2DB"
