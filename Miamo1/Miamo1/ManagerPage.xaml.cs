@@ -124,11 +124,13 @@ namespace Miamo1
             Produto produto = new Produto();
             produto.IdProduto = Convert.ToInt32(txtID.Text);
             produto.NomeProduto = txtNomeProduto.Text;
-            produto.TamanhoProduto = txtTamanhoProduto.Text;
             produto.DescricaoProduto = txtDescricaoProduto.Text;
+            produto.TamanhoProduto = txtTamanhoProduto.Text;
+            produto.PrecoProduto = Convert.ToDouble(txtPrecoProduto.Text);
             produto.CorProduto = txtCorProduto.Text;
-            produto.PrecoProduto = txtPrecoProduto.Text;
-            produto.CategoriaProduto = Convert.ToInt32(txtCategoriaProduto.Text);
+            produto.UrlImagemProduto = "";
+            produto.IdFornecedor = Convert.ToInt32(txtIdFornecedor.Text);
+            produto.IdCategoriaProduto = Convert.ToInt32(txtCategoriaProduto.Text);
 
             var json = JsonConvert.SerializeObject(produto);
             var dados = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
@@ -144,13 +146,14 @@ namespace Miamo1
                 txtTamanhoProduto.Text = "";
                 txtDescricaoProduto.Text = "";
                 txtCorProduto.Text = "";
+                txtIdFornecedor.Text = "";
                 txtPrecoProduto.Text = "";
                 txtCategoriaProduto.Text = "";
                 CarregarLV();
             }
             else
             {
-                DisplayAlert("Erro", "Informe a Categoria", "OK");
+                DisplayAlert("Erro", "Produto Não Cadastrado", "OK");
             }
 
             //Preenchendo Propriedades

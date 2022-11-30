@@ -73,12 +73,6 @@
     <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Miamo1\Miamo1.csproj">
-      <Project>{97639A42-FFAA-435A-A1C0-B62C09209F2D}</Project>
-      <Name>Miamo1</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +149,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miamo1\Miamo1.csproj">
+      <Project>{c91019d8-195f-4c05-8cdb-8687c0b7192f}</Project>
+      <Name>Miamo1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

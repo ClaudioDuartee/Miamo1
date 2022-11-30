@@ -20,24 +20,17 @@
                     VerticalOptions="Center" TextColor="#242424" FontSize="30"/>
             </StackLayout>
 
-            <StackLayout Padding="20" Orientation="Horizontal"  VerticalOptions="Center">
-                <Label Text="Titulo " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
-                       TextColor="#242424" FontSize="15"/>
-                <Label Text="Gênero " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
-                       TextColor="#242424" FontSize="15"/>
-                <Label Text="Produto " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
-                       TextColor="#242424" FontSize="15"/>
-                <Label Text="Preço " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
-                       TextColor="#242424" FontSize="15"/>
-                <Label Text="Categoria " HorizontalOptions="Center" BackgroundColor="#05F2DB" VerticalOptions="Center"
-                       TextColor="#242424" FontSize="15"/>
-                
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                <Button x:Name="btnAtualizar" Text="Atualizar" BackgroundColor="#05F2DB"
+                        TextColor="Black" HorizontalOptions="FillAndExpand"
+                        Clicked="btnAtualizar_Clicked"/>
             </StackLayout>
-            <StackLayout Padding="10">
-                <ListView x:Name="lvProduto" HeightRequest="400">
 
-                </ListView>
+            <StackLayout Padding="5">
+                <ListView x:Name="lvProduto" HeightRequest="600" RowHeight="60"/>
             </StackLayout>
+
+
 
         </StackLayout>
     </ContentPage.Content>

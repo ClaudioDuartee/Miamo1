@@ -46,6 +46,12 @@ namespace Miamo1.CellsMiamo
                 FontSize = 12
             };
 
+            Label IdFornecedor = new Label
+            {
+                TextColor = Color.FromHex("#707070"),
+                FontSize = 12
+            };
+
             Label PrecoProduto = new Label
             {
                 TextColor = Color.FromHex("#707070"),
@@ -54,22 +60,24 @@ namespace Miamo1.CellsMiamo
             };
             Label CategoriaProduto = new Label
             {
-                TextColor = Color.FromHex("#707070"),
-                FontSize = 12
+               TextColor = Color.FromHex("#707070"),
+               FontSize = 12
 
             };
 
-            NomeProduto.SetBinding(Label.TextProperty, "Titulo");
-            DescricaoProduto.SetBinding(Label.TextProperty, "Genero");
-            TamanhoProduto.SetBinding(Label.TextProperty, "Produto");
-            PrecoProduto.SetBinding(Label.TextProperty, "Preço");
-            CorProduto.SetBinding(Label.TextProperty, "Preço");
-            CategoriaProduto.SetBinding(Label.TextProperty, "Categoria");
+            NomeProduto.SetBinding(Label.TextProperty, "NomeProduto");
+            DescricaoProduto.SetBinding(Label.TextProperty, "DescricaoProduto");
+            TamanhoProduto.SetBinding(Label.TextProperty, "TamanhoProduto");
+            PrecoProduto.SetBinding(Label.TextProperty, "PrecoProduto");
+            IdFornecedor.SetBinding(Label.TextProperty, "IdFornecedor");
+            CorProduto.SetBinding(Label.TextProperty, "CorProduto");
+            CategoriaProduto.SetBinding(Label.TextProperty, "IdCategoriaProduto");
 
             verticalLayout.Children.Add(NomeProduto);
             verticalLayout.Children.Add(DescricaoProduto);
             verticalLayout.Children.Add(TamanhoProduto);
             verticalLayout.Children.Add(PrecoProduto);
+            verticalLayout.Children.Add(IdFornecedor);
             verticalLayout.Children.Add(CorProduto);
             verticalLayout.Children.Add(CategoriaProduto);
             cellWrapper.Children.Add(verticalLayout);
