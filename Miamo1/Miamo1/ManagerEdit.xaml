@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Miamo1.ManagerPage"
-             Title="Cadastro">
+             x:Class="Miamo1.ManagerEdit">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="3">
@@ -12,16 +11,17 @@
                         IsClippedToBounds="True"
                         CornerRadius="100"
                         HorizontalOptions="Center">
-                    
+
                     <Image Source="logo.png"/>
                 </Frame>
 
                 <Label Text="Miamo" HorizontalTextAlignment="Center"
                     VerticalOptions="Center" TextColor="#242424" FontSize="30"/>
             </StackLayout>
+
             <StackLayout Padding="10">
-                <Label x:Name="lblID" Text="ID" IsVisible="false"/>
-                <Entry x:Name="txtID" IsEnabled="False"  Text="0" IsVisible="false" />
+                <Label x:Name="lblID" Text="ID"/>
+                <Entry x:Name="txtID" IsEnabled="True"  Text="0"/>
                 <Label x:Name="lblNomeProduto" Text="Nome"/>
                 <Entry x:Name="txtNomeProduto" Placeholder=""  FontSize="15"/>
                 <Label x:Name="lblDescricaoProduto" Text="DescricaoProduto" />
@@ -34,20 +34,19 @@
                 <Entry x:Name="txtCorProduto" Placeholder=""   FontSize="15"/>
                 <Label x:Name="lblIdFornecedor" Text="IdFornecedor" />
                 <Entry x:Name="txtIdFornecedor" Placeholder=""   FontSize="15"/>
-               <Label x:Name="lblCategoriaProduto" Text="CategoriaProduto" />
+                <Label x:Name="lblCategoriaProduto" Text="CategoriaProduto" />
                 <Entry x:Name="txtCategoriaProduto" Placeholder=""   FontSize="15"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                <Button x:Name="btnAtualizar" Text="Cadastrar" BackgroundColor="#05F2DB"
+                <Button x:Name="btnAtualizar" Text="Atualizar" BackgroundColor="#05F2DB"
                         TextColor="Black" HorizontalOptions="FillAndExpand"
                         Clicked="btnAtualizar_Clicked"/>
-              
-                <Button x:Name="btnNovo" Text="Limpar" BackgroundColor="#05F2DB"
+                <Button x:Name="btnLimpar" Text="Limpar" BackgroundColor="#05F2DB"
                         TextColor="Black" HorizontalOptions="FillAndExpand"
-                        Clicked="btnNovo_Clicked"/>
+                        Clicked="btnLimpar_Clicked"/>
             </StackLayout>
             <StackLayout Padding="10">
-                <ListView x:Name="lvProduto" ItemSelected="lvProduto_ItemSelected" IsVisible="false">
+                <ListView x:Name="lvProduto" ItemSelected="lvProduto_ItemSelected">
                 </ListView>
             </StackLayout>
 

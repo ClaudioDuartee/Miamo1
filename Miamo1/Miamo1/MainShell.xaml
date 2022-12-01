@@ -37,6 +37,10 @@
         <ShellContent ContentTemplate="{DataTemplate pages:ManagerCategoria}"/>
     </FlyoutItem>
 
+    <FlyoutItem Title="EditarProduto" Icon="select.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:ManagerEdit}"/>
+    </FlyoutItem>
+
     <!--<TabBar>
         <Tab Title="Cadastro" Icon="logoo.png">
             <ShellContent ContentTemplate="{DataTemplate pages:ManagerPage}"/>

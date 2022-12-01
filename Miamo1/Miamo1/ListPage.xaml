@@ -20,16 +20,14 @@
                     VerticalOptions="Center" TextColor="#242424" FontSize="30"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+            <StackLayout Padding="5">
+                <ListView x:Name="lvProduto" HeightRequest="600" RowHeight="60"/>
+            </StackLayout>
+            <StackLayout>
                 <Button x:Name="btnAtualizar" Text="Atualizar" BackgroundColor="#05F2DB"
                         TextColor="Black" HorizontalOptions="FillAndExpand"
                         Clicked="btnAtualizar_Clicked"/>
             </StackLayout>
-
-            <StackLayout Padding="5">
-                <ListView x:Name="lvProduto" HeightRequest="600" RowHeight="60"/>
-            </StackLayout>
-
 
 
         </StackLayout>

@@ -19,10 +19,10 @@
                     VerticalOptions="Center" TextColor="#242424" FontSize="30"/>
             </StackLayout>
             <StackLayout Padding="10">
-                <Label x:Name="lblID" Text="ID"/>
-                <Entry x:Name="txtID" IsEnabled="False"  Text="0"/>
+                <Label x:Name="lblID" Text="ID" IsVisible="false"/>
+                <Entry x:Name="txtID" IsEnabled="False"  IsVisible="false"/>
                 <Label x:Name="lblCategoria" Text="Categoria"/>
-                <Entry x:Name="txtCategoria" IsEnabled="False"  Text="0"/>
+                <Entry x:Name="txtCategoria" IsEnabled="True" Placeholder="Digite Categiruia"/>
 
 
             </StackLayout>
@@ -30,16 +30,13 @@
                 <Button x:Name="btnAtualizar" Text="Cadastrar" BackgroundColor="#05F2DB"
                         TextColor="Black" HorizontalOptions="FillAndExpand"
                         Clicked="btnAtualizar_Clicked"/>
-                <Button x:Name="btnExcluir" Text="Excluir" BackgroundColor="Black"
-                        TextColor="white" HorizontalOptions="FillAndExpand"
-                        Clicked="btnExcluir_Clicked"/>
+
                 <Button x:Name="btnNovo" Text="Limpar" BackgroundColor="#05F2DB"
                         TextColor="Black" HorizontalOptions="FillAndExpand"
                         Clicked="btnNovo_Clicked"/>
             </StackLayout>
             <StackLayout Padding="10">
                 <ListView x:Name="lvCategoria" ItemSelected="lvCategoria_ItemSelected">
-
                 </ListView>
 
             </StackLayout>

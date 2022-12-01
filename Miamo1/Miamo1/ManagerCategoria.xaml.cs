@@ -51,7 +51,7 @@ namespace Miamo1
                 //Define o Template do Item
 
                 lvCategoria.ItemTemplate = new DataTemplate(typeof
-                    (ProdutosMiamo));
+                    (CategoriaCells));
 
                 //associa a lista de generos vinda da api ao list view
                 lvCategoria.ItemsSource = categorias;
@@ -61,15 +61,13 @@ namespace Miamo1
 
                 DisplayAlert("Erro", "Erro ao carregar os dados", "OK");
             }
-            //lvCategoria.ItemTemplate = new DataTemplate(typeof(Categoria));
-            //lvCategoria.ItemsSource = contexto.Conexao.Query<Categoria>("SELECT * FROM Categoria").ToList();
-            //lvCategoria.RowHeight = 100;
+           
         }
 
 
         public void Limpar()
         {
-            txtID.Text = "0";
+          
             txtCategoria.Text = txtCategoria.Text = txtCategoria.Text = string.Empty;
             txtCategoria.Focus();
             CarregarDados();
@@ -78,23 +76,24 @@ namespace Miamo1
         }
         private void btnAtualizar_Clicked(object sender, EventArgs e)
         {
+        
+
             try
             {
                 if (string.IsNullOrEmpty(txtCategoria.Text))
                 {
-                    DisplayAlert("Erro", "Informe a Categoria", "OK");
+                    DisplayAlert("Erro", "Informe o Nome do Produto", "OK");
                     return;
                 }
-
             }
             catch (Exception ex)
             {
-                DisplayAlert("Erro", ex.Message, "OK");
 
+                DisplayAlert("Erro", ex.Message, "OK");
             }
 
             Categoria categoria = new Categoria();
-            //categoria.ID = Convert.ToInt32(txtID.Text);
+           
             categoria.Categorias = txtCategoria.Text;
 
             var json = JsonConvert.SerializeObject(categoria);
@@ -104,7 +103,7 @@ namespace Miamo1
             var client = new HttpClient();
             var response = client.PostAsync(urlApi + "/Categoria", dados);
 
-            if (response.Result.StatusCode == HttpStatusCode.OK)
+            if(response.Result.StatusCode == HttpStatusCode.OK)
             {
                 DisplayAlert("Sucesso", "Categoria Cadastrada com Sucesso", "OK");
                 txtCategoria.Text = "";
@@ -112,8 +111,10 @@ namespace Miamo1
             }
             else
             {
-                DisplayAlert("Erro", "Informe a Categoria", "OK");
+                DisplayAlert("Erro", "Produto Não Cadastrado", "OK");
             }
+
+
         }
 
         private void btnExcluir_Clicked(object sender, EventArgs e)
@@ -131,21 +132,7 @@ namespace Miamo1
 
         private void lvCategoria_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-           // try
-           // {
-           //    var categoria = (Categoria)e.SelectedItem;
-           //     txtID.Text = categoria.ID.ToString();
-           //     txtCategoria.Text = categoria.Categorias;
-
-
-
-
-           // }
-           //catch (Exception ex)
-           // {
-
-           //   DisplayAlert("Erro", ex.Message, "OK");
-           // }
+           
         }
     }
 }

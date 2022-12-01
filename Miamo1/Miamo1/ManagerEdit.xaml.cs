@@ -1,5 +1,4 @@
-﻿
-using Miamo1.CellsMiamo;
+﻿using Miamo1.CellsMiamo;
 using Miamo1.ModelsMiamo;
 using Newtonsoft.Json;
 using System;
@@ -9,21 +8,20 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 namespace Miamo1
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ManagerPage : ContentPage
-
+    public partial class ManagerEdit : ContentPage
     {
-        //public Contexto contexto;
+
         string urlApi = "https://miamoapi.azurewebsites.net/api";
-        public ManagerPage()
+        public ManagerEdit()
         {
             InitializeComponent();
-
-            //contexto = new Contexto();
             CarregarLV();
         }
 
@@ -62,18 +60,9 @@ namespace Miamo1
 
         }
 
-        public void Limpar()
-        {
-            txtID.Text = "0";
-            txtNomeProduto.Text = txtDescricaoProduto.Text = txtTamanhoProduto.Text = string.Empty;
-            txtNomeProduto.Focus();
-            CarregarLV();
-
-
-        }
-
         private void btnAtualizar_Clicked(object sender, EventArgs e)
         {
+
             try
             {
                 if (string.IsNullOrEmpty(txtNomeProduto.Text))
@@ -130,11 +119,11 @@ namespace Miamo1
 
             //metodo post API
             var client = new HttpClient();
-            var response = client.PostAsync(urlApi + "/Produtos", dados);
+            var response = client.PutAsync(urlApi + "/Produtos", dados);
 
             if (response.Result.StatusCode == HttpStatusCode.OK)
             {
-                DisplayAlert("Sucesso", "Produto Cadastrada com Sucesso", "OK");
+                DisplayAlert("Sucesso", "Editado com Sucesso", "OK");
                 txtNomeProduto.Text = "";
                 txtTamanhoProduto.Text = "";
                 txtDescricaoProduto.Text = "";
@@ -146,32 +135,25 @@ namespace Miamo1
             }
             else
             {
-                DisplayAlert("Erro", "Produto Não Cadastrado", "OK");
+                DisplayAlert("Erro", "Não foi possivel Editar", "OK");
             }
 
+
+        }
+
+        //private void btnExcluir_Clicked(object sender, EventArgs e)
+        //{
+           
+        //}
+
+        private void btnLimpar_Clicked(object sender, EventArgs e)
+        {
             
-
-
-        }
-
-
-
-
-
-        private void btnExcluir_Clicked(object sender, EventArgs e)
-        {
-        }
-
-        private void btnNovo_Clicked(object sender, EventArgs e)
-        {
-
-            {
-                Limpar();
-            }
         }
 
         private void lvProduto_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+
         }
     }
 }
