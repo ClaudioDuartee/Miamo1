@@ -13,7 +13,7 @@
                         CornerRadius="100"
                         HorizontalOptions="Center">
                     
-                    <Image Source="logo.png"/>
+                    <Image Source="logoo.png" WidthRequest="110"/>
                 </Frame>
 
                 <Label Text="Miamo" HorizontalTextAlignment="Center"

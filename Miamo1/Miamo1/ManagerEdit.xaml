@@ -12,7 +12,7 @@
                         CornerRadius="100"
                         HorizontalOptions="Center">
 
-                    <Image Source="logo.png"/>
+                    <Image Source="logoo.png" WidthRequest="110"/>
                 </Frame>
 
                 <Label Text="Miamo" HorizontalTextAlignment="Center"
@@ -45,7 +45,7 @@
                         TextColor="Black" HorizontalOptions="FillAndExpand"
                         Clicked="btnLimpar_Clicked"/>
             </StackLayout>
-            <StackLayout Padding="10">
+            <StackLayout Padding="10" IsVisible="false">
                 <ListView x:Name="lvProduto" ItemSelected="lvProduto_ItemSelected">
                 </ListView>
             </StackLayout>

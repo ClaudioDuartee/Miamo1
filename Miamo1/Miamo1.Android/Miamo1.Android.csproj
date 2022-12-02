@@ -148,13 +148,13 @@
     <AndroidResource Include="Resources\drawable\fotomuie.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\logoo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Miamo1\Miamo1.csproj">
       <Project>{c91019d8-195f-4c05-8cdb-8687c0b7192f}</Project>
       <Name>Miamo1</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logoo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -33,9 +33,6 @@
         <ShellContent ContentTemplate="{DataTemplate pages:ListPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Categoria" Icon="select.png">
-        <ShellContent ContentTemplate="{DataTemplate pages:ManagerCategoria}"/>
-    </FlyoutItem>
 
     <FlyoutItem Title="EditarProduto" Icon="select.png">
         <ShellContent ContentTemplate="{DataTemplate pages:ManagerEdit}"/>

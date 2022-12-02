@@ -134,7 +134,7 @@ namespace Miamo1
 
             if (response.Result.StatusCode == HttpStatusCode.OK)
             {
-                DisplayAlert("Sucesso", "Produto Cadastrada com Sucesso", "OK");
+                DisplayAlert("Sucesso", "Produto Cadastrado com Sucesso", "OK");
                 txtNomeProduto.Text = "";
                 txtTamanhoProduto.Text = "";
                 txtDescricaoProduto.Text = "";

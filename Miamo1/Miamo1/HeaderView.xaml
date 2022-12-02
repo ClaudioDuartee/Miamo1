@@ -12,7 +12,7 @@
                     VerticalOptions="Center"
                    HorizontalOptions="Center"
                    FontSize="
-                   35"/>
+                   30" TextDecorations="None"/>
         </Grid>
        
         
