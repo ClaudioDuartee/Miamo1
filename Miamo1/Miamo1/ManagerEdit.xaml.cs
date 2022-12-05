@@ -148,7 +148,12 @@ namespace Miamo1
 
         private void btnLimpar_Clicked(object sender, EventArgs e)
         {
-            
+            txtID.Text = "0";
+            txtNomeProduto.Text = txtDescricaoProduto.Text = txtTamanhoProduto.Text = txtCategoriaProduto.Text = txtCorProduto.Text = txtIdFornecedor.Text = txtPrecoProduto.Text = string.Empty;
+            txtNomeProduto.Focus();
+            CarregarLV();
+
+
         }
 
         private void lvProduto_ItemSelected(object sender, SelectedItemChangedEventArgs e)

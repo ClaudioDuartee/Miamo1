@@ -65,7 +65,7 @@ namespace Miamo1
         public void Limpar()
         {
             txtID.Text = "0";
-            txtNomeProduto.Text = txtDescricaoProduto.Text = txtTamanhoProduto.Text = string.Empty;
+            txtNomeProduto.Text = txtDescricaoProduto.Text = txtTamanhoProduto.Text = txtCategoriaProduto.Text = txtCorProduto.Text = txtIdFornecedor.Text = txtPrecoProduto.Text = string.Empty;
             txtNomeProduto.Focus();
             CarregarLV();
 
